@@ -90,8 +90,8 @@
 
     Private Sub Percent()
 
-        If lblTB.Text = 0 Then Exit Sub
-        If lblTR.Text = 0 Then Exit Sub
+        If lblTB.Text = "0" Then Exit Sub
+        If lblTR.Text = "0" Then Exit Sub
         Dim totalBuffer As Decimal
         Dim parseBuffer As Decimal
         Dim Uno As Decimal
@@ -104,7 +104,7 @@
         Decimal.TryParse(lblTB.Text, parseBuffer)
         totalBuffer = parseBuffer / Uno
         totalBuffer *= 100
-
+        totalBuffer = Math.Round(totalBuffer, 2)
         lblFY.Text = totalBuffer
 
 
