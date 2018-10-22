@@ -1,5 +1,6 @@
 ﻿Public Class frmhome
     Dim theDate As DateTime = System.DateTime.Now
+    WithEvents TblLogsTableAdapterMain As dbMainDataSetTableAdapters.tblLogsTableAdapter
 
     Private Sub frmhome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'DONE - Actual bin 1 = Bin 1 -  (Handler Loss + Missing Units)
@@ -7,7 +8,9 @@
         'Total rejects = 2nd Reload
         'Final Rescreen Yield = Total Bin 1 / total Bin 1 + total rejec
 
-
+        TblLogsTableAdapterMain = New dbMainDataSetTableAdapters.tblLogsTableAdapter() 'EWAN KO NALANG KUNG MAG NULL PA TO
+        TblLogsTableAdapterMain.ClearBeforeFill = True
+        TblLogsTableAdapterMain.Connection.Open()
     End Sub
 
     Private Sub clockUpdater_Tick(sender As Object, e As EventArgs) Handles clockUpdater.Tick
@@ -122,7 +125,42 @@
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        TblLogsTableAdapterMain.InsertIntoTblLogs(txtlot.Text, txtDevice.Text, lblTB.Text, lblTR.Text, lblFY.Text)
+        Dim _lblTB As Integer
+        Dim _lblTR As Integer
+        Dim _lblFY As Double
+        If txtlot.Text.Length = 0 Then
+            tltpSave.Show("Please enter sometihng", txtlot)
+            Exit Sub
+        End If
+
+        If txtDevice.Text.Length = 0 Then
+            tltpSave.Show("Please enter sometihng", txtDevice)
+            Exit Sub
+        End If
+
+        If lblTB.Text.Length = 0 Then
+            tltpSave.Show("Please enter sometihng", lblTB)
+            Exit Sub
+        End If
+
+        If lblTR.Text.Length = 0 Then
+            tltpSave.Show("Please enter sometihng", lblTR)
+            Exit Sub
+        End If
+
+        If lblFY.Text.Length = 0 Then
+            tltpSave.Show("Please enter sometihng", lblFY)
+            Exit Sub
+        End If
+
+        Integer.TryParse(lblTB.Text, _lblTB)
+        Integer.TryParse(lblTR.Text, _lblTR)
+        Integer.TryParse(lblFY.Text, _lblFY)
+
+        If TblLogsTableAdapterMain.Insert(txtlot.Text, txtDevice.Text, _lblTB, _lblTR, _lblFY) Then
+            MsgBox("Saved !!!")
+        End If
+
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
@@ -199,5 +237,9 @@
 
         End If
 
+    End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Application.Exit()
     End Sub
 End Class

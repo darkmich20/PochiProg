@@ -77,7 +77,6 @@ D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\bin\Debug\home.exe.config
 D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\bin\Debug\home.exe
 D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\bin\Debug\home.pdb
 D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\bin\Debug\home.xml
-D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug\home.vbprojAssemblyReference.cache
 D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug\home.frmhome.resources
 D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug\home.Resources.resources
 D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug\home.vbproj.GenerateResource.cache

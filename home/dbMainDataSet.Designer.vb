@@ -1309,8 +1309,6 @@ Namespace dbMainDataSetTableAdapters
             End Try
             Return returnValue
         End Function
-
-
     End Class
     
     '''<summary>

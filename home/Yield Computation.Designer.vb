@@ -70,12 +70,11 @@ Partial Class frmhome
         Me.txtDevice = New System.Windows.Forms.TextBox()
         Me.lbldev = New System.Windows.Forms.Label()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.clockUpdater = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        'Me.TblLogsTableAdapter1 = New home.dbMainDataSetTableAdapters.tblLogsTableAdapter()
+        Me.tltpSave = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -574,15 +573,6 @@ Partial Class frmhome
         Me.btnExit.Text = "EXIT"
         Me.btnExit.UseVisualStyleBackColor = False
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(744, 478)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(215, 23)
-        Me.Button1.TabIndex = 53
-        Me.Button1.Text = "testConnection"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'clockUpdater
         '
         Me.clockUpdater.Enabled = True
@@ -611,9 +601,10 @@ Partial Class frmhome
         Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(138, 22)
         Me.SaveToolStripMenuItem.Text = "&Save"
         '
-        'TblLogsTableAdapter1
+        'tltpSave
         '
-        'Me.TblLogsTableAdapter1.ClearBeforeFill = True
+        Me.tltpSave.IsBalloon = True
+        Me.tltpSave.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning
         '
         'frmhome
         '
@@ -621,7 +612,6 @@ Partial Class frmhome
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkSeaGreen
         Me.ClientSize = New System.Drawing.Size(1189, 513)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.lbldev)
         Me.Controls.Add(Me.txtDevice)
@@ -696,8 +686,7 @@ Partial Class frmhome
     Friend WithEvents btnExit As Button
     Friend WithEvents lbl2RAB As Label
     Friend WithEvents lbl1RAB As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TblLogsTableAdapterMain As dbMainDataSetTableAdapters.tblLogsTableAdapter
+
     Friend WithEvents clockUpdater As Timer
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
@@ -705,4 +694,5 @@ Partial Class frmhome
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents lblTB As Label
+    Friend WithEvents tltpSave As ToolTip
 End Class

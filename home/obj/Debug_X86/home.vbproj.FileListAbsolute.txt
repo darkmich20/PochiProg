@@ -1,0 +1,12 @@
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\bin\Debug_X86\home.exe.config
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\bin\Debug_X86\home.exe
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\bin\Debug_X86\home.pdb
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\bin\Debug_X86\home.xml
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug_X86\home.frmhome.resources
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug_X86\home.Resources.resources
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug_X86\home.vbproj.GenerateResource.cache
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug_X86\home.vbproj.CoreCompileInputs.cache
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug_X86\home.exe
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug_X86\home.xml
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug_X86\home.pdb
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\bin\Debug_X86\dbMain.accdb
