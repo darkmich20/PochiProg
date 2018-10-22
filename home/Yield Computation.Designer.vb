@@ -75,6 +75,7 @@ Partial Class frmhome
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tltpSave = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btnSearch = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -606,12 +607,25 @@ Partial Class frmhome
         Me.tltpSave.IsBalloon = True
         Me.tltpSave.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning
         '
+        'btnSearch
+        '
+        Me.btnSearch.BackColor = System.Drawing.Color.White
+        Me.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSearch.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.Location = New System.Drawing.Point(1053, 122)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(113, 35)
+        Me.btnSearch.TabIndex = 55
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = False
+        '
         'frmhome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkSeaGreen
         Me.ClientSize = New System.Drawing.Size(1189, 513)
+        Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.lbldev)
         Me.Controls.Add(Me.txtDevice)
@@ -695,4 +709,5 @@ Partial Class frmhome
     Friend WithEvents Label2 As Label
     Friend WithEvents lblTB As Label
     Friend WithEvents tltpSave As ToolTip
+    Friend WithEvents btnSearch As Button
 End Class

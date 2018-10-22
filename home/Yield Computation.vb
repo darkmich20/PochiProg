@@ -56,6 +56,23 @@
         totalBuffer += parseBuffer
         lblTB.Text = totalBuffer
 
+        '======================================================'
+
+        Dim sum As Integer
+
+        sum = Val(txt1LHL.Text) + Val(txt1LMU.Text)
+
+        If Val(txt1LB.Text) < sum Then
+            Beep()
+            txt1LMU.Text = ""
+            txt1LHL.Text = ""
+            MessageBox.Show("Value must not greater than Bin 1 Load", "Error")
+
+            '===================================================='
+
+        End If
+
+
 
     End Sub
     Private Sub _1stReload_TextChanged(sender As Object, e As EventArgs) Handles txt1RB.TextChanged, txt1RR.TextChanged
@@ -158,7 +175,7 @@
         Integer.TryParse(lblFY.Text, _lblFY)
 
         If TblLogsTableAdapterMain.Insert(txtlot.Text, txtDevice.Text, _lblTB, _lblTR, _lblFY) Then
-            MsgBox("Saved !!!")
+            MsgBox("You're Data has been Saved.")
         End If
 
     End Sub
@@ -241,5 +258,9 @@
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Application.Exit()
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        form2.show()
     End Sub
 End Class

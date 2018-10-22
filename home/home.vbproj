@@ -90,6 +90,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbMainDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Yield Computation.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Yield Computation.resx">
       <DependentUpon>Yield Computation.vb</DependentUpon>
     </EmbeddedResource>
