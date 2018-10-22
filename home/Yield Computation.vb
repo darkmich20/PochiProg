@@ -6,6 +6,8 @@
         'DONE - Total Bin 1 = 1st Load + 1st Reload + 2nd Reload
         'Total rejects = 2nd Reload
         'Final Rescreen Yield = Total Bin 1 / total Bin 1 + total rejec
+
+
     End Sub
 
     Private Sub clockUpdater_Tick(sender As Object, e As EventArgs) Handles clockUpdater.Tick
@@ -64,6 +66,8 @@
 
         lbl1RAB.Text = totalBuffer.ToString()
         Percent()
+
+
     End Sub
     Private Sub _2ndReload_TextChanged(sender As Object, e As EventArgs) Handles txt2RR.TextChanged, txt2RHL.TextChanged, txt2RB.TextChanged, txt2MU.TextChanged
         Dim totalBuffer As Integer = 0
@@ -90,8 +94,8 @@
 
     Private Sub Percent()
 
-        If lblTB.Text = "0" Then Exit Sub
-        If lblTR.Text = "0" Then Exit Sub
+        If lblTB.Text = 0 Then Exit Sub
+        If lblTR.Text = 0 Then Exit Sub
         Dim totalBuffer As Decimal
         Dim parseBuffer As Decimal
         Dim Uno As Decimal
@@ -104,8 +108,14 @@
         Decimal.TryParse(lblTB.Text, parseBuffer)
         totalBuffer = parseBuffer / Uno
         totalBuffer *= 100
-        totalBuffer = Math.Round(totalBuffer, 2)
+
         lblFY.Text = totalBuffer
+
+        Dim value As Decimal = Decimal.Parse(lblFY.Text)
+
+        value = Math.Round(value, 2)
+
+        lblFY.Text = value
 
 
 
@@ -131,6 +141,68 @@
         txt1LMU.Clear()
         txt1RMU.Clear()
         txt2MU.Clear()
+
+    End Sub
+
+    Private Sub _1st_Load_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt1LB.KeyPress, txt1LR.KeyPress, txt1LHL.KeyPress, txt1LMU.KeyPress
+
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+
+            End If
+        End If
+    End Sub
+
+    Private Sub _2nd_Load_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt1RB.KeyPress, txt1RR.KeyPress, txt1RHL.KeyPress, txt1RMU.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+
+            End If
+        End If
+    End Sub
+    Private Sub _3rd_Load_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt2RB.KeyPress, txt2RR.KeyPress, txt2RHL.KeyPress, txt2MU.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+
+            End If
+        End If
+    End Sub
+
+    Private Sub txt1LHL_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1LHL.KeyPress
+
+        If Val(txt1LB.Text) < Val(txt1LHL.Text & e.KeyChar) Then
+            Beep()
+            e.Handled = True
+            txt1LHL.Text = ""
+            MessageBox.Show("Value must not greater than Bin 1 Load", "Error")
+
+        End If
+    End Sub
+
+    Private Sub txt1LMU_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1LMU.KeyPress
+
+        If Val(txt1LB.Text) < Val(txt1LMU.Text & e.KeyChar) Then
+            Beep()
+            e.Handled = True
+            txt1LMU.Text = ""
+            MessageBox.Show("Value must not greater than Bin 1 Load", "Error")
+
+        End If
+
+    End Sub
+
+    Private Sub txt1RB_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1RB.KeyPress
+
+        If Val(txt1LR.Text) < Val(txt1RB.Text & e.KeyChar) Then
+            Beep()
+            e.Handled = True
+            txt1RB.Text = ""
+            MessageBox.Show("1st Reload Bin 1 value must not greater than in Reject on 1st Load ", "Error")
+
+        End If
 
     End Sub
 End Class
