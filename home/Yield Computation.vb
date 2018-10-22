@@ -122,7 +122,7 @@
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        TblLogsTableAdapterMain.InsertIntoTblLogs()
+        TblLogsTableAdapterMain.InsertIntoTblLogs(txtlot.Text, txtDevice.Text, lblTB.Text, lblTR.Text, lblFY.Text)
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click

@@ -75,7 +75,7 @@ Partial Class frmhome
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TblLogsTableAdapter1 = New home.dbMainDataSetTableAdapters.tblLogsTableAdapter()
+        'Me.TblLogsTableAdapter1 = New home.dbMainDataSetTableAdapters.tblLogsTableAdapter()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -613,7 +613,7 @@ Partial Class frmhome
         '
         'TblLogsTableAdapter1
         '
-        Me.TblLogsTableAdapter1.ClearBeforeFill = True
+        'Me.TblLogsTableAdapter1.ClearBeforeFill = True
         '
         'frmhome
         '

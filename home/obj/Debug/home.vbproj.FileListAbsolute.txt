@@ -85,3 +85,15 @@ D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug\home.vbproj.Cor
 D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug\home.exe
 D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug\home.xml
 D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug\home.pdb
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug\home.vbprojResolveAssemblyReference.cache
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug\home.frmhome.resources
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug\home.Resources.resources
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug\home.vbproj.GenerateResource.Cache
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug\home.exe
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug\home.xml
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug\home.pdb
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\bin\Debug\dbMain.accdb
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\bin\Debug\home.exe.config
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\bin\Debug\home.exe
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\bin\Debug\home.pdb
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\bin\Debug\home.xml
