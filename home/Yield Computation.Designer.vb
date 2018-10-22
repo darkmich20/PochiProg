@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmhome
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmhome
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.lbl_title = New System.Windows.Forms.Label()
@@ -32,7 +32,6 @@ Partial Class frmhome
         Me.lbl_totalrjs = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lbl_qty4 = New System.Windows.Forms.Label()
-        Me.lblTB = New System.Windows.Forms.Label()
         Me.lblTR = New System.Windows.Forms.Label()
         Me.lblFY = New System.Windows.Forms.Label()
         Me.lbl_qty1 = New System.Windows.Forms.Label()
@@ -63,9 +62,7 @@ Partial Class frmhome
         Me.txt1LB = New System.Windows.Forms.TextBox()
         Me.lblAB1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.lblTB = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.lbllot = New System.Windows.Forms.Label()
@@ -78,11 +75,9 @@ Partial Class frmhome
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TblLogsTableAdapter1 = New home.dbMainDataSetTableAdapters.tblLogsTableAdapter()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -179,35 +174,29 @@ Partial Class frmhome
         Me.lbl_qty4.TabIndex = 18
         Me.lbl_qty4.Text = "Qty"
         '
-        'lblTB
-        '
-        Me.lblTB.AutoSize = True
-        Me.lblTB.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTB.Location = New System.Drawing.Point(60, 23)
-        Me.lblTB.Name = "lblTB"
-        Me.lblTB.Size = New System.Drawing.Size(18, 19)
-        Me.lblTB.TabIndex = 19
-        Me.lblTB.Text = "0"
-        '
         'lblTR
         '
-        Me.lblTR.AutoSize = True
+        Me.lblTR.BackColor = System.Drawing.Color.White
+        Me.lblTR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblTR.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTR.Location = New System.Drawing.Point(58, 20)
+        Me.lblTR.Location = New System.Drawing.Point(131, 155)
         Me.lblTR.Name = "lblTR"
-        Me.lblTR.Size = New System.Drawing.Size(18, 19)
+        Me.lblTR.Size = New System.Drawing.Size(166, 45)
         Me.lblTR.TabIndex = 20
         Me.lblTR.Text = "0"
+        Me.lblTR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblFY
         '
-        Me.lblFY.AutoSize = True
+        Me.lblFY.BackColor = System.Drawing.Color.White
+        Me.lblFY.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblFY.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFY.Location = New System.Drawing.Point(55, 28)
+        Me.lblFY.Location = New System.Drawing.Point(131, 220)
         Me.lblFY.Name = "lblFY"
-        Me.lblFY.Size = New System.Drawing.Size(18, 19)
+        Me.lblFY.Size = New System.Drawing.Size(167, 45)
         Me.lblFY.TabIndex = 21
         Me.lblFY.Text = "0"
+        Me.lblFY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lbl_qty1
         '
@@ -486,11 +475,11 @@ Partial Class frmhome
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Gainsboro
-        Me.GroupBox2.Controls.Add(Me.GroupBox5)
+        Me.GroupBox2.Controls.Add(Me.lblFY)
+        Me.GroupBox2.Controls.Add(Me.lblTR)
+        Me.GroupBox2.Controls.Add(Me.lblTB)
         Me.GroupBox2.Controls.Add(Me.lbl_totalrjs)
-        Me.GroupBox2.Controls.Add(Me.GroupBox4)
         Me.GroupBox2.Controls.Add(Me.lbl_tb1)
-        Me.GroupBox2.Controls.Add(Me.GroupBox3)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.lbl_qty4)
         Me.GroupBox2.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -501,40 +490,17 @@ Partial Class frmhome
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "TOTAL"
         '
-        'GroupBox5
+        'lblTB
         '
-        Me.GroupBox5.BackColor = System.Drawing.Color.White
-        Me.GroupBox5.Controls.Add(Me.lblFY)
-        Me.GroupBox5.Location = New System.Drawing.Point(134, 218)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(164, 71)
-        Me.GroupBox5.TabIndex = 24
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = " "
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.BackColor = System.Drawing.Color.White
-        Me.GroupBox4.Controls.Add(Me.lblTR)
-        Me.GroupBox4.Location = New System.Drawing.Point(131, 151)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(166, 46)
-        Me.GroupBox4.TabIndex = 23
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = " "
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.BackColor = System.Drawing.Color.White
-        Me.GroupBox3.Controls.Add(Me.lblTB)
-        Me.GroupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.GroupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox3.Location = New System.Drawing.Point(131, 87)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(167, 45)
-        Me.GroupBox3.TabIndex = 22
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = " "
+        Me.lblTB.BackColor = System.Drawing.Color.White
+        Me.lblTB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lblTB.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTB.Location = New System.Drawing.Point(131, 97)
+        Me.lblTB.Name = "lblTB"
+        Me.lblTB.Size = New System.Drawing.Size(166, 45)
+        Me.lblTB.TabIndex = 19
+        Me.lblTB.Text = "0"
+        Me.lblTB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnSave
         '
@@ -645,6 +611,10 @@ Partial Class frmhome
         Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(138, 22)
         Me.SaveToolStripMenuItem.Text = "&Save"
         '
+        'TblLogsTableAdapter1
+        '
+        Me.TblLogsTableAdapter1.ClearBeforeFill = True
+        '
         'frmhome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -675,12 +645,6 @@ Partial Class frmhome
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -697,7 +661,6 @@ Partial Class frmhome
     Friend WithEvents lbl_totalrjs As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents lbl_qty4 As Label
-    Friend WithEvents lblTB As Label
     Friend WithEvents lblTR As Label
     Friend WithEvents lblFY As Label
     Friend WithEvents lbl_qty1 As Label
@@ -735,14 +698,11 @@ Partial Class frmhome
     Friend WithEvents lbl1RAB As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents TblLogsTableAdapterMain As dbMainDataSetTableAdapters.tblLogsTableAdapter
-    Friend WithEvents QueriesTableAdapterMain As dbMainDataSetTableAdapters.QueriesTableAdapter
     Friend WithEvents clockUpdater As Timer
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SaveToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents lblTB As Label
 End Class

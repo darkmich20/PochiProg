@@ -94,8 +94,8 @@
 
     Private Sub Percent()
 
-        If lblTB.Text = 0 Then Exit Sub
-        If lblTR.Text = 0 Then Exit Sub
+        If lblTB.Text = "0" Then Exit Sub
+        If lblTR.Text = "0" Then Exit Sub
         Dim totalBuffer As Decimal
         Dim parseBuffer As Decimal
         Dim Uno As Decimal
@@ -122,8 +122,7 @@
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        MsgBox("Waley pa :P" + vbNewLine + vbNewLine + "Mag ccrash pag pinindut mo OK :P", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Chillax")
-        Throw New Exception("Waley pa :P")
+        TblLogsTableAdapterMain.InsertIntoTblLogs()
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
@@ -145,11 +144,9 @@
     End Sub
 
     Private Sub _1st_Load_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt1LB.KeyPress, txt1LR.KeyPress, txt1LHL.KeyPress, txt1LMU.KeyPress
-
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
-
             End If
         End If
     End Sub
@@ -158,7 +155,6 @@
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
-
             End If
         End If
     End Sub
@@ -166,7 +162,6 @@
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
-
             End If
         End If
     End Sub
