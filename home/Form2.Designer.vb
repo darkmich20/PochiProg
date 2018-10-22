@@ -30,8 +30,19 @@ Partial Class Form2
         Me.DbMainDataSet = New home.dbMainDataSet()
         Me.DbMainDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.TblLogsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TblLogsTableAdapter = New home.dbMainDataSetTableAdapters.tblLogsTableAdapter()
+        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LotNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DeviceNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalBin1DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalRejectsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalYieldDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DbMainDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DbMainDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblLogsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbldev
@@ -82,18 +93,75 @@ Partial Class Form2
         '
         'ListView1
         '
-        Me.ListView1.Location = New System.Drawing.Point(15, 91)
+        Me.ListView1.Location = New System.Drawing.Point(736, 91)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(953, 306)
+        Me.ListView1.Size = New System.Drawing.Size(232, 306)
         Me.ListView1.TabIndex = 56
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.List
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.LotNumberDataGridViewTextBoxColumn, Me.DeviceNumberDataGridViewTextBoxColumn, Me.TotalBin1DataGridViewTextBoxColumn, Me.TotalRejectsDataGridViewTextBoxColumn, Me.TotalYieldDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.TblLogsBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 91)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(680, 306)
+        Me.DataGridView1.TabIndex = 57
+        '
+        'TblLogsBindingSource
+        '
+        Me.TblLogsBindingSource.DataMember = "tblLogs"
+        Me.TblLogsBindingSource.DataSource = Me.DbMainDataSetBindingSource
+        '
+        'TblLogsTableAdapter
+        '
+        Me.TblLogsTableAdapter.ClearBeforeFill = True
+        '
+        'IDDataGridViewTextBoxColumn
+        '
+        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        '
+        'LotNumberDataGridViewTextBoxColumn
+        '
+        Me.LotNumberDataGridViewTextBoxColumn.DataPropertyName = "Lot Number"
+        Me.LotNumberDataGridViewTextBoxColumn.HeaderText = "Lot Number"
+        Me.LotNumberDataGridViewTextBoxColumn.Name = "LotNumberDataGridViewTextBoxColumn"
+        '
+        'DeviceNumberDataGridViewTextBoxColumn
+        '
+        Me.DeviceNumberDataGridViewTextBoxColumn.DataPropertyName = "Device Number"
+        Me.DeviceNumberDataGridViewTextBoxColumn.HeaderText = "Device Number"
+        Me.DeviceNumberDataGridViewTextBoxColumn.Name = "DeviceNumberDataGridViewTextBoxColumn"
+        '
+        'TotalBin1DataGridViewTextBoxColumn
+        '
+        Me.TotalBin1DataGridViewTextBoxColumn.DataPropertyName = "Total Bin 1"
+        Me.TotalBin1DataGridViewTextBoxColumn.HeaderText = "Total Bin 1"
+        Me.TotalBin1DataGridViewTextBoxColumn.Name = "TotalBin1DataGridViewTextBoxColumn"
+        '
+        'TotalRejectsDataGridViewTextBoxColumn
+        '
+        Me.TotalRejectsDataGridViewTextBoxColumn.DataPropertyName = "Total Reject/s"
+        Me.TotalRejectsDataGridViewTextBoxColumn.HeaderText = "Total Reject/s"
+        Me.TotalRejectsDataGridViewTextBoxColumn.Name = "TotalRejectsDataGridViewTextBoxColumn"
+        '
+        'TotalYieldDataGridViewTextBoxColumn
+        '
+        Me.TotalYieldDataGridViewTextBoxColumn.DataPropertyName = "Total Yield %"
+        Me.TotalYieldDataGridViewTextBoxColumn.HeaderText = "Total Yield %"
+        Me.TotalYieldDataGridViewTextBoxColumn.Name = "TotalYieldDataGridViewTextBoxColumn"
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(980, 418)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.lbldev)
         Me.Controls.Add(Me.txtDevice)
@@ -103,6 +171,8 @@ Partial Class Form2
         Me.Text = "Form2"
         CType(Me.DbMainDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DbMainDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblLogsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -115,4 +185,13 @@ Partial Class Form2
     Friend WithEvents DbMainDataSetBindingSource As BindingSource
     Friend WithEvents DbMainDataSet As dbMainDataSet
     Friend WithEvents ListView1 As ListView
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents TblLogsBindingSource As BindingSource
+    Friend WithEvents TblLogsTableAdapter As dbMainDataSetTableAdapters.tblLogsTableAdapter
+    Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents LotNumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DeviceNumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TotalBin1DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TotalRejectsDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TotalYieldDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
