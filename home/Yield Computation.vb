@@ -5,12 +5,8 @@ Public Class frmhome
     WithEvents TblLogsTableAdapterMain As dbMainDataSetTableAdapters.tblLogsTableAdapter
 
     Private Sub frmhome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'DONE - Actual bin 1 = Bin 1 -  (Handler Loss + Missing Units)
-        'DONE - Total Bin 1 = 1st Load + 1st Reload + 2nd Reload
-        'Total rejects = 2nd Reload
-        'Final Rescreen Yield = Total Bin 1 / total Bin 1 + total rejec
 
-        TblLogsTableAdapterMain = New dbMainDataSetTableAdapters.tblLogsTableAdapter() 'EWAN KO NALANG KUNG MAG NULL PA TO
+        TblLogsTableAdapterMain = New dbMainDataSetTableAdapters.tblLogsTableAdapter()
         TblLogsTableAdapterMain.ClearBeforeFill = True
         TblLogsTableAdapterMain.Connection.Open()
     End Sub
@@ -22,7 +18,7 @@ Public Class frmhome
     Private Sub _TotalBin1_TestChanged(sender As Object, e As EventArgs) Handles txt1LB.TextChanged, txt1RB.TextChanged, txt2RB.TextChanged
         Dim totalBuffer As Integer = 0
         Dim parseBuffer As Integer = 0
-
+        '============Total Bin 1=================
         Integer.TryParse(txt1LB.Text, parseBuffer)
         totalBuffer = parseBuffer
         Integer.TryParse(txt1RB.Text, parseBuffer)
@@ -31,15 +27,15 @@ Public Class frmhome
         totalBuffer += parseBuffer
 
         lblTB.Text = totalBuffer.ToString()
-
+        '========================================
     End Sub
 
-    Private Sub _1stLoad_TextChanged(sender As Object, e As EventArgs) Handles txt1LB.TextChanged, txt1LR.TextChanged, txt1LMU.TextChanged, txt1LHL.TextChanged,
-        lblQTYOUT.TextChanged, lblAB1.TextChanged, lbl1RAB.TextChanged, lbl2RAB.TextChanged, lblTB.TextChanged, lblTR.TextChanged, lblQTYIN.TextChanged
+    Private Sub _1stLoad_TextChanged(sender As Object, e As EventArgs) Handles txt1LB.TextChanged, txt1LR.TextChanged, txt1LMU.TextChanged, txt1LHL.TextChanged
+
 
         Dim totalBuffer As Integer = 0
         Dim parseBuffer As Integer = 0
-
+        '===================Actual Bin 1 1st Load======================
         Integer.TryParse(txt1LB.Text, parseBuffer)
         totalBuffer = parseBuffer
         Integer.TryParse(txt1LHL.Text, parseBuffer)
@@ -49,7 +45,7 @@ Public Class frmhome
 
 
         lblAB1.Text = totalBuffer.ToString()
-
+        '====================Total Bin 1================================
         totalBuffer = 0
         parseBuffer = 0
         Integer.TryParse(txt1LB.Text, parseBuffer)
@@ -59,6 +55,15 @@ Public Class frmhome
         Integer.TryParse(txt2RB.Text, parseBuffer)
         totalBuffer += parseBuffer
         lblTB.Text = totalBuffer
+
+
+    End Sub
+    Private Sub _QTY_TextChanged(sender As Object, e As EventArgs) Handles lblQTYOUT.TextChanged, lblAB1.TextChanged, lbl1RAB.TextChanged, lbl2RAB.TextChanged, lblTB.TextChanged, lblTR.TextChanged, lblQTYIN.TextChanged
+
+
+        Dim totalBuffer As Integer = 0
+        Dim parseBuffer As Integer = 0
+
 
 
         '==================QTY OUT================='
@@ -158,7 +163,7 @@ Public Class frmhome
     Private Sub _1stReload_TextChanged(sender As Object, e As EventArgs) Handles txt1RB.TextChanged, txt1RHL.TextChanged, txt1RMU.TextChanged
         Dim totalBuffer As Integer = 0
         Dim parseBuffer As Integer = 0
-
+        '============================Actual Bin 1 1st Reload ============================'
         Integer.TryParse(txt1RB.Text, parseBuffer)
         totalBuffer = parseBuffer
         Integer.TryParse(txt1RHL.Text, parseBuffer)
@@ -168,14 +173,14 @@ Public Class frmhome
 
         lbl1RAB.Text = totalBuffer.ToString()
         Percent()
-
+        '================================================================================'
 
     End Sub
     Private Sub _2ndReload_TextChanged(sender As Object, e As EventArgs) Handles txt2RR.TextChanged, txt2RHL.TextChanged, txt2RB.TextChanged, txt2MU.TextChanged
         Dim totalBuffer As Integer = 0
         Dim parseBuffer As Integer = 0
 
-
+        '============================ Actual Bin 1 2nd reload ================================' 
         Integer.TryParse(txt2RB.Text, parseBuffer)
         totalBuffer = parseBuffer
         Integer.TryParse(txt2RHL.Text, parseBuffer)
@@ -186,12 +191,13 @@ Public Class frmhome
 
 
         lbl2RAB.Text = totalBuffer.ToString()
-
+        '========================Total Rejects ========================
         totalBuffer = 0
         parseBuffer = 0
         Integer.TryParse(txt2RR.Text, parseBuffer)
         lblTR.Text = parseBuffer
         Percent()
+        '==============================================================
     End Sub
 
     Private Sub Percent()
@@ -243,12 +249,12 @@ Public Class frmhome
         End If
 
         If lblTR.Text.Length = 0 Then
-            tltpSave.Show("Please enter sometihng", lblTR)
+            tltpSave.Show("Please enter something", lblTR)
             Exit Sub
         End If
 
         If lblFY.Text.Length = 0 Then
-            tltpSave.Show("Please enter sometihng", lblFY)
+            tltpSave.Show("Please enter something", lblFY)
             Exit Sub
         End If
 
@@ -310,11 +316,10 @@ Public Class frmhome
         If Val(txt1LB.Text) < Val(txt1LHL.Text & e.KeyChar) Then
             Beep()
             e.Handled = True
-            txt1LHL.Text = ""
+            txt1LHL.Clear()
             MessageBox.Show("Quantity of Handler loss must not be higher than Bin 1 1st_Load", "Error")
 
         End If
-
 
         '1st load handler loss
     End Sub
@@ -323,7 +328,7 @@ Public Class frmhome
         If Val(txt1LB.Text) < Val(txt1LMU.Text & e.KeyChar) Then
             Beep()
             e.Handled = True
-            txt1LMU.Text = ""
+            txt1LMU.Clear()
             MessageBox.Show("Quantity of Missing Unit must not be higher than Bin 1 1st_Load", "Error")
 
         End If
@@ -334,7 +339,7 @@ Public Class frmhome
         If Val(txt1LR.Text) < Val(txt1RB.Text & e.KeyChar) Then
             Beep()
             e.Handled = True
-            txt1RB.Text = ""
+            txt1RB.Clear()
             MessageBox.Show("1st Reload Bin 1 qty must not be higher than Rejects on 1st_Load ", "Error")
 
         End If
@@ -346,7 +351,7 @@ Public Class frmhome
         If Val(txt1RB.Text) < Val(txt1RHL.Text & e.KeyChar) Then
             Beep()
             e.Handled = True
-            txt1RHL.Text = ""
+            txt1RHL.Clear()
             MessageBox.Show("Handler Loss must not be higher than Bin 1 1st_Load", "Error")
 
         End If
@@ -356,7 +361,7 @@ Public Class frmhome
         If Val(txt1RB.Text) < Val(txt1RMU.Text & e.KeyChar) Then
             Beep()
             e.Handled = True
-            txt1LMU.Text = ""
+            txt1LMU.Clear()
             MessageBox.Show("Missing Unit must not be higher than Bin 1 1st_Load", "Error")
 
 
@@ -368,7 +373,7 @@ Public Class frmhome
         If Val(txt1RR.Text) < Val(txt2RB.Text & e.KeyChar) Then
             Beep()
             e.Handled = True
-            txt2RB.Text = ""
+            txt2RB.Clear()
             MessageBox.Show("2nd Reload Bin 1 qty must not be higher than Rejects on 1st_Reload ", "Error")
 
         End If
@@ -381,8 +386,8 @@ Public Class frmhome
         If Val(txt2RB.Text) < Val(txt2RHL.Text & e.KeyChar) Then
             Beep()
             e.Handled = True
-            txt2RHL.Text = ""
-            MessageBox.Show("Handler Loss must not higher than Bin 1 2nd Reload", "Error")
+            txt2RHL.Clear()
+            MessageBox.Show("Handler Loss must not be higher than Bin 1 2nd Reload", "Error")
 
         End If
         '1st reload bin < 1st reload handler Loss
@@ -391,8 +396,8 @@ Public Class frmhome
         If Val(txt2RB.Text) < Val(txt2MU.Text & e.KeyChar) Then
             Beep()
             e.Handled = True
-            txt2MU.Text = ""
-            MessageBox.Show("Missing Unit must not higher than Bin 1 2nd_Reload", "Error")
+            txt2MU.Clear()
+            MessageBox.Show("Missing Unit must not be higher than Bin 1 2nd_Reload", "Error")
 
 
         End If

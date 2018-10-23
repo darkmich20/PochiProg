@@ -44,6 +44,7 @@ Partial Class frmhome
         Me.lbl_Mssngunits = New System.Windows.Forms.Label()
         Me.lbl_actualBin = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbl2RAB = New System.Windows.Forms.Label()
@@ -76,7 +77,6 @@ Partial Class frmhome
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tltpSave = New System.Windows.Forms.ToolTip(Me.components)
         Me.btnSearch = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.lblQTYOUT = New System.Windows.Forms.Label()
         Me.lblQTYIN = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -335,6 +335,16 @@ Partial Class frmhome
         Me.GroupBox1.TabIndex = 33
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Directions :"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(7, 64)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(14, 18)
+        Me.Label3.TabIndex = 51
+        Me.Label3.Text = "*"
         '
         'Label2
         '
@@ -626,16 +636,6 @@ Partial Class frmhome
         Me.btnSearch.TabIndex = 55
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(7, 64)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(14, 18)
-        Me.Label3.TabIndex = 51
-        Me.Label3.Text = "*"
         '
         'lblQTYOUT
         '
