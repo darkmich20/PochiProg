@@ -403,6 +403,27 @@ Public Class frmhome
         End If
         ' 1st reload bin must not < 1st reload missing unit
     End Sub
+    Private Sub _1stReloadReject_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1RHL.KeyPress, txt1RMU.KeyPress, txt1LR.KeyPress
+
+        Dim totalBuffer4 As Integer = 0
+        Dim parseBuffer4 As Integer = 0
+        '=============Bin 1 + Rejects 1st Reload===================='
+        Dim sum4 As Integer
+        Integer.TryParse(txt1RB.Text, parseBuffer4)
+        totalBuffer4 = parseBuffer4
+        Integer.TryParse(txt1RR.Text, parseBuffer4)
+        totalBuffer4 += parseBuffer4
+
+        sum4 = totalBuffer4
+
+        If sum4 >= Val(txt1LR.Text) Then
+            Beep()
+            txt1RMU.Clear()
+            txt1RHL.Clear()
+            MessageBox.Show("Sum of Bin 1 and Reject of 1st Reload must not be greater than Reject of 1st Load", "Error")
+
+        End If
+    End Sub
 
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
