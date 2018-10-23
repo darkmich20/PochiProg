@@ -317,7 +317,8 @@ Public Class frmhome
             Beep()
             e.Handled = True
             txt1LHL.Clear()
-            MessageBox.Show("Quantity of Handler loss must not be higher than Bin 1 1st_Load", "Error")
+            'MessageBox.Show("Quantity of Handler loss must not be higher than Bin 1 1st_Load", "Error")
+            tltpSave.Show("Quantity of Handler loss must not be higher than Bin 1 1st_Load", txt1LHL)
 
         End If
 
@@ -329,8 +330,8 @@ Public Class frmhome
             Beep()
             e.Handled = True
             txt1LMU.Clear()
-            MessageBox.Show("Quantity of Missing Unit must not be higher than Bin 1 1st_Load", "Error")
-
+            'MessageBox.Show("Quantity of Missing Unit must not be higher than Bin 1 1st_Load", "Error")
+            tltpSave.Show("Quantity of Missing Unit must not be higher than Bin 1 1st_Load", txt1LMU)
         End If
         '1st load bin < MU 1stload
     End Sub
@@ -340,8 +341,8 @@ Public Class frmhome
             Beep()
             e.Handled = True
             txt1RB.Clear()
-            MessageBox.Show("1st Reload Bin 1 qty must not be higher than Rejects on 1st_Load ", "Error")
-
+            'MessageBox.Show("1st Reload Bin 1 qty must not be higher than Rejects on 1st_Load", "Error")
+            tltpSave.Show("1st Reload Bin 1 qty must not be higher than Rejects on 1st_Load", txt1RB)
         End If
         '1st Load reject < 1st reload Bin
 
@@ -352,8 +353,8 @@ Public Class frmhome
             Beep()
             e.Handled = True
             txt1RHL.Clear()
-            MessageBox.Show("Handler Loss must not be higher than Bin 1 1st_Load", "Error")
-
+            'MessageBox.Show("Handler Loss must not be higher than Bin 1 1st_Load", "Error")
+            tltpSave.Show("Handler Loss must not be higher than Bin 1 1st_Load", txt1RHL)
         End If
         '1st reload handler Loss
     End Sub
@@ -362,8 +363,8 @@ Public Class frmhome
             Beep()
             e.Handled = True
             txt1LMU.Clear()
-            MessageBox.Show("Missing Unit must not be higher than Bin 1 1st_Load", "Error")
-
+            'MessageBox.Show("Missing Unit must not be higher than Bin 1 1st_Load", "Error")
+            tltpSave.Show("Missing Unit must not be higher than Bin 1 1st_Load", txt1RMU)
 
         End If
         '1st reload missing unit
@@ -374,8 +375,8 @@ Public Class frmhome
             Beep()
             e.Handled = True
             txt2RB.Clear()
-            MessageBox.Show("2nd Reload Bin 1 qty must not be higher than Rejects on 1st_Reload ", "Error")
-
+            'MessageBox.Show("2nd Reload Bin 1 qty must not be higher than Rejects on 1st_Reload ", "Error")
+            tltpSave.Show("2nd Reload Bin 1 qty must not be higher than Rejects on 1st_Reload", txt2RB)
         End If
         '1st reLoad reject < 2nd reload Bin1
 
@@ -388,7 +389,7 @@ Public Class frmhome
             e.Handled = True
             txt2RHL.Clear()
             MessageBox.Show("Handler Loss must not be higher than Bin 1 2nd Reload", "Error")
-
+            tltpSave.Show("Handler Loss must not be higher than Bin 1 2nd Reload", txt2RHL)
         End If
         '1st reload bin < 1st reload handler Loss
     End Sub
@@ -397,8 +398,8 @@ Public Class frmhome
             Beep()
             e.Handled = True
             txt2MU.Clear()
-            MessageBox.Show("Missing Unit must not be higher than Bin 1 2nd_Reload", "Error")
-
+            'MessageBox.Show("Missing Unit must not be higher than Bin 1 2nd_Reload", "Error")
+            tltpSave.Show("Missing Unit must not be higher than Bin 1 2nd_Reload", txt2MU)
 
         End If
         ' 1st reload bin must not < 1st reload missing unit
@@ -420,8 +421,8 @@ Public Class frmhome
             Beep()
             txt1RMU.Clear()
             txt1RHL.Clear()
-            MessageBox.Show("Sum of Bin 1 and Reject of 1st Reload must not be greater than Reject of 1st Load", "Error")
-
+            'MessageBox.Show("Sum of Bin 1 and Reject of 1st Reload must not be greater than Reject of 1st Load", "Error")
+            tltpSave.Show("Sum of Bin 1 and Reject of 1st Reload must not be greater than Reject of 1st Load", txt1RHL)
         End If
     End Sub
 
