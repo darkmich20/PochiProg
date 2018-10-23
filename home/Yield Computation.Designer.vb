@@ -76,9 +76,16 @@ Partial Class frmhome
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tltpSave = New System.Windows.Forms.ToolTip(Me.components)
         Me.btnSearch = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblQTYOUT = New System.Windows.Forms.Label()
+        Me.lblQTYIN = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'lbl_title
@@ -138,7 +145,7 @@ Partial Class frmhome
         Me.lbl_tb1.AutoSize = True
         Me.lbl_tb1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_tb1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lbl_tb1.Location = New System.Drawing.Point(26, 110)
+        Me.lbl_tb1.Location = New System.Drawing.Point(41, 113)
         Me.lbl_tb1.Name = "lbl_tb1"
         Me.lbl_tb1.Size = New System.Drawing.Size(99, 19)
         Me.lbl_tb1.TabIndex = 15
@@ -148,7 +155,7 @@ Partial Class frmhome
         '
         Me.lbl_totalrjs.AutoSize = True
         Me.lbl_totalrjs.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_totalrjs.Location = New System.Drawing.Point(6, 168)
+        Me.lbl_totalrjs.Location = New System.Drawing.Point(21, 171)
         Me.lbl_totalrjs.Name = "lbl_totalrjs"
         Me.lbl_totalrjs.Size = New System.Drawing.Size(121, 19)
         Me.lbl_totalrjs.TabIndex = 16
@@ -158,7 +165,7 @@ Partial Class frmhome
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(-3, 233)
+        Me.Label6.Location = New System.Drawing.Point(12, 225)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(130, 38)
         Me.Label6.TabIndex = 17
@@ -179,7 +186,7 @@ Partial Class frmhome
         Me.lblTR.BackColor = System.Drawing.Color.White
         Me.lblTR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblTR.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTR.Location = New System.Drawing.Point(131, 155)
+        Me.lblTR.Location = New System.Drawing.Point(146, 158)
         Me.lblTR.Name = "lblTR"
         Me.lblTR.Size = New System.Drawing.Size(166, 45)
         Me.lblTR.TabIndex = 20
@@ -191,7 +198,7 @@ Partial Class frmhome
         Me.lblFY.BackColor = System.Drawing.Color.White
         Me.lblFY.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblFY.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFY.Location = New System.Drawing.Point(131, 220)
+        Me.lblFY.Location = New System.Drawing.Point(146, 220)
         Me.lblFY.Name = "lblFY"
         Me.lblFY.Size = New System.Drawing.Size(167, 45)
         Me.lblFY.TabIndex = 21
@@ -291,6 +298,7 @@ Partial Class frmhome
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.lbl2RAB)
@@ -323,7 +331,7 @@ Partial Class frmhome
         Me.GroupBox1.Font = New System.Drawing.Font("Arial Narrow", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 122)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(642, 382)
+        Me.GroupBox1.Size = New System.Drawing.Size(642, 351)
         Me.GroupBox1.TabIndex = 33
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Directions :"
@@ -332,21 +340,21 @@ Partial Class frmhome
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(14, 53)
+        Me.Label2.Location = New System.Drawing.Point(7, 46)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(190, 18)
+        Me.Label2.Size = New System.Drawing.Size(229, 18)
         Me.Label2.TabIndex = 50
-        Me.Label2.Text = "Click Save button to Save."
+        Me.Label2.Text = "*Click Save button to Save logs."
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(14, 28)
+        Me.Label1.Location = New System.Drawing.Point(7, 28)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(390, 18)
+        Me.Label1.Size = New System.Drawing.Size(396, 18)
         Me.Label1.TabIndex = 49
-        Me.Label1.Text = "Fill in the Boxes  with the corresponding re-screen data."
+        Me.Label1.Text = "*Fill in the Boxes  with the corresponding re-screen data."
         '
         'lbl2RAB
         '
@@ -483,9 +491,9 @@ Partial Class frmhome
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.lbl_qty4)
         Me.GroupBox2.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(701, 125)
+        Me.GroupBox2.Location = New System.Drawing.Point(687, 125)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(313, 324)
+        Me.GroupBox2.Size = New System.Drawing.Size(327, 283)
         Me.GroupBox2.TabIndex = 34
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "TOTAL"
@@ -495,7 +503,7 @@ Partial Class frmhome
         Me.lblTB.BackColor = System.Drawing.Color.White
         Me.lblTB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblTB.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTB.Location = New System.Drawing.Point(131, 97)
+        Me.lblTB.Location = New System.Drawing.Point(146, 100)
         Me.lblTB.Name = "lblTB"
         Me.lblTB.Size = New System.Drawing.Size(166, 45)
         Me.lblTB.TabIndex = 19
@@ -584,7 +592,7 @@ Partial Class frmhome
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1189, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1185, 24)
         Me.MenuStrip1.TabIndex = 54
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -619,12 +627,78 @@ Partial Class frmhome
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(7, 64)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(14, 18)
+        Me.Label3.TabIndex = 51
+        Me.Label3.Text = "*"
+        '
+        'lblQTYOUT
+        '
+        Me.lblQTYOUT.AutoSize = True
+        Me.lblQTYOUT.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblQTYOUT.Location = New System.Drawing.Point(201, 66)
+        Me.lblQTYOUT.Name = "lblQTYOUT"
+        Me.lblQTYOUT.Size = New System.Drawing.Size(17, 18)
+        Me.lblQTYOUT.TabIndex = 63
+        Me.lblQTYOUT.Text = "0"
+        '
+        'lblQTYIN
+        '
+        Me.lblQTYIN.AutoSize = True
+        Me.lblQTYIN.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblQTYIN.Location = New System.Drawing.Point(201, 18)
+        Me.lblQTYIN.Name = "lblQTYIN"
+        Me.lblQTYIN.Size = New System.Drawing.Size(17, 18)
+        Me.lblQTYIN.TabIndex = 62
+        Me.lblQTYIN.Text = "0"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label5.Location = New System.Drawing.Point(6, 46)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(120, 38)
+        Me.Label5.TabIndex = 61
+        Me.Label5.Text = "     QTY OUT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " (Actual Bin 1):"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label4.Location = New System.Drawing.Point(55, 17)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(71, 19)
+        Me.Label4.TabIndex = 60
+        Me.Label4.Text = "QTY IN :"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox3.Controls.Add(Me.lblQTYOUT)
+        Me.GroupBox3.Controls.Add(Me.lblQTYIN)
+        Me.GroupBox3.Controls.Add(Me.Label5)
+        Me.GroupBox3.Controls.Add(Me.Label4)
+        Me.GroupBox3.Location = New System.Drawing.Point(688, 414)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(325, 102)
+        Me.GroupBox3.TabIndex = 64
+        Me.GroupBox3.TabStop = False
+        '
         'frmhome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkSeaGreen
-        Me.ClientSize = New System.Drawing.Size(1189, 513)
+        Me.ClientSize = New System.Drawing.Size(1185, 528)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.lbldev)
@@ -651,6 +725,8 @@ Partial Class frmhome
         Me.GroupBox2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -710,4 +786,10 @@ Partial Class frmhome
     Friend WithEvents lblTB As Label
     Friend WithEvents tltpSave As ToolTip
     Friend WithEvents btnSearch As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lblQTYOUT As Label
+    Friend WithEvents lblQTYIN As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents GroupBox3 As GroupBox
 End Class

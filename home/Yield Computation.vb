@@ -1,4 +1,6 @@
-﻿Public Class frmhome
+﻿Imports System.ComponentModel
+
+Public Class frmhome
     Dim theDate As DateTime = System.DateTime.Now
     WithEvents TblLogsTableAdapterMain As dbMainDataSetTableAdapters.tblLogsTableAdapter
 
@@ -32,7 +34,9 @@
 
     End Sub
 
-    Private Sub _1stLoad_TextChanged(sender As Object, e As EventArgs) Handles txt1LB.TextChanged, txt1LR.TextChanged, txt1LMU.TextChanged, txt1LHL.TextChanged
+    Private Sub _1stLoad_TextChanged(sender As Object, e As EventArgs) Handles txt1LB.TextChanged, txt1LR.TextChanged, txt1LMU.TextChanged, txt1LHL.TextChanged,
+        lblQTYOUT.TextChanged, lblAB1.TextChanged, lbl1RAB.TextChanged, lbl2RAB.TextChanged, lblTB.TextChanged, lblTR.TextChanged, lblQTYIN.TextChanged
+
         Dim totalBuffer As Integer = 0
         Dim parseBuffer As Integer = 0
 
@@ -56,32 +60,110 @@
         totalBuffer += parseBuffer
         lblTB.Text = totalBuffer
 
-        '======================================================'
 
-        Dim sum As Integer
+        '==================QTY OUT================='
 
-        sum = Val(txt1LHL.Text) + Val(txt1LMU.Text)
+        Integer.TryParse(lblAB1.Text, parseBuffer)
+        totalBuffer = parseBuffer
+        Integer.TryParse(lbl1RAB.Text, parseBuffer)
+        totalBuffer += parseBuffer
+        Integer.TryParse(lbl2RAB.Text, parseBuffer)
+        totalBuffer += parseBuffer
 
-        If Val(txt1LB.Text) < sum Then
-            Beep()
-            txt1LMU.Text = ""
-            txt1LHL.Text = ""
-            MessageBox.Show("Value must not greater than Bin 1 Load", "Error")
+        lblQTYOUT.Text = totalBuffer
+        '=========================================='
 
-            '===================================================='
+        '================QTY IN ==================='
+        Integer.TryParse(lblTB.Text, parseBuffer)
+        totalBuffer = parseBuffer
+        Integer.TryParse(lblTR.Text, parseBuffer)
+        totalBuffer += parseBuffer
 
-        End If
+        lblQTYIN.Text = totalBuffer
 
-
+        '=========================================='
 
     End Sub
-    Private Sub _1stReload_TextChanged(sender As Object, e As EventArgs) Handles txt1RB.TextChanged, txt1RR.TextChanged
+    Private Sub _1stloadHLMU_TextChanged(sender As Object, e As EventArgs) Handles txt1LHL.TextChanged, txt1LMU.TextChanged, txt1LB.TextChanged
+
+        Dim totalBuffer As Integer = 0
+        Dim parseBuffer As Integer = 0
+        '=============Handler loss + Missing Unit 1st Load===================='
+        Dim sum As Integer
+        Integer.TryParse(txt1LHL.Text, parseBuffer)
+        totalBuffer = parseBuffer
+        Integer.TryParse(txt1LMU.Text, parseBuffer)
+        totalBuffer += parseBuffer
+
+        sum = totalBuffer
+
+        If Val(txt1LB.Text) <= sum Then
+            Beep()
+            txt1LMU.Clear()
+            txt1LHL.Clear()
+            MessageBox.Show("Sum of Handler Loss and Missing Unit must not be greater than Bin 1 Summary(1st Load)", "Error")
+
+        End If
+        '====================================================================='
+
+    End Sub
+
+    Private Sub _1stReloadHLMU_TextChanged(sender As Object, e As EventArgs) Handles txt1RHL.TextChanged, txt1RMU.TextChanged, txt1RB.TextChanged
+
+        Dim totalBuffer As Integer = 0
+        Dim parseBuffer As Integer = 0
+        '=============Handler loss + Missing Unit 1st Reload================'
+        Dim sum2 As Integer
+        Integer.TryParse(txt1RHL.Text, parseBuffer)
+        totalBuffer = parseBuffer
+        Integer.TryParse(txt1RMU.Text, parseBuffer)
+        totalBuffer += parseBuffer
+
+        sum2 = totalBuffer
+
+        If Val(txt1RB.Text) <= sum2 Then
+            Beep()
+            txt1RMU.Clear()
+            txt1RHL.Clear()
+            MessageBox.Show("Sum of Handler Loss and Missing Unit must not be greater than Bin 1 Summary(1st Reload)", "Error")
+
+        End If
+        '====================================================================='
+    End Sub
+    Private Sub _2ndReloadHLMU_TextChanged(sender As Object, e As EventArgs) Handles txt2RHL.TextChanged, txt2MU.TextChanged, txt2RB.TextChanged
+
+        Dim totalBuffer As Integer = 0
+        Dim parseBuffer As Integer = 0
+
+        '===============Handler loss + Missing Unit 2nd Reload================'
+        Dim sum3 As Integer
+        Integer.TryParse(txt2RHL.Text, parseBuffer)
+        totalBuffer = parseBuffer
+        Integer.TryParse(txt2MU.Text, parseBuffer)
+        totalBuffer += parseBuffer
+
+        sum3 = totalBuffer
+
+        If Val(txt2RB.Text) <= sum3 Then
+            Beep()
+            txt2MU.Clear()
+            txt2RHL.Clear()
+            MessageBox.Show("Sum of Handler Loss and Missing Unit must not be greater than Bin 1 Summary(2nd ReLoad)", "Error")
+
+        End If
+        '======================================================================'
+    End Sub
+
+
+    Private Sub _1stReload_TextChanged(sender As Object, e As EventArgs) Handles txt1RB.TextChanged, txt1RHL.TextChanged, txt1RMU.TextChanged
         Dim totalBuffer As Integer = 0
         Dim parseBuffer As Integer = 0
 
         Integer.TryParse(txt1RB.Text, parseBuffer)
         totalBuffer = parseBuffer
-        Integer.TryParse(txt1RR.Text, parseBuffer)
+        Integer.TryParse(txt1RHL.Text, parseBuffer)
+        totalBuffer -= parseBuffer
+        Integer.TryParse(txt1RMU.Text, parseBuffer)
         totalBuffer -= parseBuffer
 
         lbl1RAB.Text = totalBuffer.ToString()
@@ -146,17 +228,17 @@
         Dim _lblTR As Integer
         Dim _lblFY As Double
         If txtlot.Text.Length = 0 Then
-            tltpSave.Show("Please enter sometihng", txtlot)
+            tltpSave.Show("Lot Number is required.", txtlot)
             Exit Sub
         End If
 
         If txtDevice.Text.Length = 0 Then
-            tltpSave.Show("Please enter sometihng", txtDevice)
+            tltpSave.Show("Device Number is Required.", txtDevice)
             Exit Sub
         End If
 
         If lblTB.Text.Length = 0 Then
-            tltpSave.Show("Please enter sometihng", lblTB)
+            tltpSave.Show("Please enter something", lblTB)
             Exit Sub
         End If
 
@@ -181,20 +263,22 @@
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+
         txtlot.Clear()
         txtDevice.Clear()
         txt1LB.Clear()
-        txt1RB.Clear()
-        txt2RB.Clear()
         txt1LR.Clear()
-        txt1RR.Clear()
-        txt2RR.Clear()
         txt1LHL.Clear()
-        txt1RHL.Clear()
-        txt2RHL.Clear()
         txt1LMU.Clear()
+        txt1RB.Clear()
+        txt1RR.Clear()
+        txt1RHL.Clear()
         txt1RMU.Clear()
+        txt2RB.Clear()
+        txt2RR.Clear()
+        txt2RHL.Clear()
         txt2MU.Clear()
+        lblFY.Text = "0"
 
     End Sub
 
@@ -227,40 +311,102 @@
             Beep()
             e.Handled = True
             txt1LHL.Text = ""
-            MessageBox.Show("Value must not greater than Bin 1 Load", "Error")
+            MessageBox.Show("Quantity of Handler loss must not be higher than Bin 1 1st_Load", "Error")
 
         End If
-    End Sub
 
+
+        '1st load handler loss
+    End Sub
     Private Sub txt1LMU_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1LMU.KeyPress
 
         If Val(txt1LB.Text) < Val(txt1LMU.Text & e.KeyChar) Then
             Beep()
             e.Handled = True
             txt1LMU.Text = ""
-            MessageBox.Show("Value must not greater than Bin 1 Load", "Error")
+            MessageBox.Show("Quantity of Missing Unit must not be higher than Bin 1 1st_Load", "Error")
 
         End If
-
+        '1st load bin < MU 1stload
     End Sub
-
     Private Sub txt1RB_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1RB.KeyPress
 
         If Val(txt1LR.Text) < Val(txt1RB.Text & e.KeyChar) Then
             Beep()
             e.Handled = True
             txt1RB.Text = ""
-            MessageBox.Show("1st Reload Bin 1 value must not greater than in Reject on 1st Load ", "Error")
+            MessageBox.Show("1st Reload Bin 1 qty must not be higher than Rejects on 1st_Load ", "Error")
 
         End If
+        '1st Load reject < 1st reload Bin
 
     End Sub
+    Private Sub txt1RHL_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1RHL.KeyPress
+
+        If Val(txt1RB.Text) < Val(txt1RHL.Text & e.KeyChar) Then
+            Beep()
+            e.Handled = True
+            txt1RHL.Text = ""
+            MessageBox.Show("Handler Loss must not be higher than Bin 1 1st_Load", "Error")
+
+        End If
+        '1st reload handler Loss
+    End Sub
+    Private Sub txt1RMU_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt1RMU.KeyPress
+        If Val(txt1RB.Text) < Val(txt1RMU.Text & e.KeyChar) Then
+            Beep()
+            e.Handled = True
+            txt1LMU.Text = ""
+            MessageBox.Show("Missing Unit must not be higher than Bin 1 1st_Load", "Error")
+
+
+        End If
+        '1st reload missing unit
+    End Sub
+    Private Sub txt2RB_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt2RB.KeyPress
+
+        If Val(txt1RR.Text) < Val(txt2RB.Text & e.KeyChar) Then
+            Beep()
+            e.Handled = True
+            txt2RB.Text = ""
+            MessageBox.Show("2nd Reload Bin 1 qty must not be higher than Rejects on 1st_Reload ", "Error")
+
+        End If
+        '1st reLoad reject < 2nd reload Bin1
+
+    End Sub
+
+    Private Sub txt2RHL_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt2RHL.KeyPress
+
+        If Val(txt2RB.Text) < Val(txt2RHL.Text & e.KeyChar) Then
+            Beep()
+            e.Handled = True
+            txt2RHL.Text = ""
+            MessageBox.Show("Handler Loss must not higher than Bin 1 2nd Reload", "Error")
+
+        End If
+        '1st reload bin < 1st reload handler Loss
+    End Sub
+    Private Sub txt2MU_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt2MU.KeyPress
+        If Val(txt2RB.Text) < Val(txt2MU.Text & e.KeyChar) Then
+            Beep()
+            e.Handled = True
+            txt2MU.Text = ""
+            MessageBox.Show("Missing Unit must not higher than Bin 1 2nd_Reload", "Error")
+
+
+        End If
+        ' 1st reload bin must not < 1st reload missing unit
+    End Sub
+
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Application.Exit()
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        form2.show()
+        Form2.Show()
     End Sub
+
+
 End Class
