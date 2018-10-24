@@ -233,7 +233,7 @@ Public Class frmhome
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Dim _lblTB As Integer
         Dim _lblTR As Integer
-        Dim _lblFY As Decimal
+        Dim _lblFY As Double
         If txtlot.Text.Length = 0 Then
             tltpSave.Show("Lot Number is required.", txtlot)
             Exit Sub
@@ -261,7 +261,7 @@ Public Class frmhome
 
         Integer.TryParse(lblTB.Text, _lblTB)
         Integer.TryParse(lblTR.Text, _lblTR)
-        Integer.TryParse(lblFY.Text, _lblFY)
+        Double.TryParse(lblFY.Text, _lblFY)
 
         If TblLogsTableAdapterMain.Insert(txtlot.Text, txtDevice.Text, _lblTB, _lblTR, _lblFY) Then
             MsgBox("You're Data has been Saved.")
