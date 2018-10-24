@@ -19,7 +19,7 @@
             lstvItem.SubItems.Add(DbMainDataSet.tblLogs.Item(i).Device_Number.ToString())
             lstvItem.SubItems.Add(DbMainDataSet.tblLogs.Item(i).Total_Bin_1.ToString())
             lstvItem.SubItems.Add(DbMainDataSet.tblLogs.Item(i)._Total_Reject_s.ToString())
-            lstvItem.SubItems.Add(DbMainDataSet.tblLogs.Item(i)._Total_Yield__.ToString())
+            lstvItem.SubItems.Add(DbMainDataSet.tblLogs.Item(i).Total_Yield.ToString())
             lstvMain.Items.Add(lstvItem)
             i += 1
         Loop While i < DbMainDataSet.tblLogs.Count
