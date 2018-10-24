@@ -10,3 +10,5 @@ D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug_X86\home.exe
 D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug_X86\home.xml
 D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug_X86\home.pdb
 D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\bin\Debug_X86\dbMain.accdb
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug_X86\home.Form2.resources
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug_X86\home.vbprojAssemblyReference.cache
