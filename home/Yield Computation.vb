@@ -259,26 +259,27 @@ Public Class frmhome
             MsgBox("You're Data has been Saved.")
         End If
 
-
+        btnClear.PerformClick()
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
 
+
         txtlot.Clear()
         txtDevice.Clear()
-        txt1LB.Clear()
-        txt1LR.Clear()
-        txt1LHL.Clear()
-        txt1LMU.Clear()
-        txt1RB.Clear()
-        txt1RR.Clear()
-        txt1RHL.Clear()
-        txt1RMU.Clear()
-        txt2RB.Clear()
-        txt2RR.Clear()
-        txt2RHL.Clear()
         txt2MU.Clear()
-        lblFY.Text = "0"
+        txt2RHL.Clear()
+        txt2RR.Clear()
+        txt2RB.Clear()
+        txt1RMU.Clear()
+        txt1RHL.Clear()
+        txt1RR.Clear()
+        txt1RB.Clear()
+        txt1LMU.Clear()
+        txt1LHL.Clear()
+        txt1LR.Clear()
+        txt1LB.Clear()
+        lblFY.Text = ""
 
     End Sub
 
