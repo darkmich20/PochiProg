@@ -90,6 +90,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbMainDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dbMainDataSet.vb">
+      <DependentUpon>dbMainDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form2.Designer.vb">
       <DependentUpon>Form2.vb</DependentUpon>
     </Compile>

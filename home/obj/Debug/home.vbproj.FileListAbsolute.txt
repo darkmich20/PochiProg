@@ -53,7 +53,6 @@ C:\Users\jhoyr\Downloads\Jhuy\home\bin\Debug\home.exe.config
 C:\Users\jhoyr\Downloads\Jhuy\home\bin\Debug\home.exe
 C:\Users\jhoyr\Downloads\Jhuy\home\bin\Debug\home.pdb
 C:\Users\jhoyr\Downloads\Jhuy\home\bin\Debug\home.xml
-C:\Users\jhoyr\Downloads\Jhuy\home\obj\Debug\home.vbprojResolveAssemblyReference.cache
 C:\Users\jhoyr\Downloads\Jhuy\home\obj\Debug\home.frmhome.resources
 C:\Users\jhoyr\Downloads\Jhuy\home\obj\Debug\home.Resources.resources
 C:\Users\jhoyr\Downloads\Jhuy\home\obj\Debug\home.vbproj.GenerateResource.Cache
@@ -97,3 +96,4 @@ C:\Users\jhoyr\Documents\GitHub\PochiProg\home\bin\Debug\home.exe
 C:\Users\jhoyr\Documents\GitHub\PochiProg\home\bin\Debug\home.pdb
 C:\Users\jhoyr\Documents\GitHub\PochiProg\home\bin\Debug\home.xml
 C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug\home.Form2.resources
+C:\Users\jhoyr\Downloads\Jhuy\home\obj\Debug\home.Form2.resources
