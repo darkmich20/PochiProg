@@ -97,3 +97,5 @@ C:\Users\jhoyr\Documents\GitHub\PochiProg\home\bin\Debug\home.exe
 C:\Users\jhoyr\Documents\GitHub\PochiProg\home\bin\Debug\home.pdb
 C:\Users\jhoyr\Documents\GitHub\PochiProg\home\bin\Debug\home.xml
 C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug\home.Form2.resources
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug\home.vbprojAssemblyReference.cache
+D:\Users\Garfunkel Vila\Documents\Repos\PochiProg\home\obj\Debug\home.Form2.resources
