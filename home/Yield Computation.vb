@@ -4,6 +4,7 @@ Public Class frmhome
     Dim theDate As DateTime = System.DateTime.Now
     WithEvents TblLogsTableAdapterMain As dbMainDataSetTableAdapters.tblLogsTableAdapter
 
+
     Private Sub frmhome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         TblLogsTableAdapterMain = New dbMainDataSetTableAdapters.tblLogsTableAdapter()
@@ -224,7 +225,7 @@ Public Class frmhome
         Dim _lblTB As Integer
         Dim _lblTR As Integer
         Dim _lblFY As Double
-        Dim _lbldate As Integer
+        Dim _lbldate As String = TimeOfDay
 
 
         'Dim emptyTextBoxes =
@@ -306,7 +307,8 @@ Public Class frmhome
         Integer.TryParse(lblTB.Text, _lblTB)
         Integer.TryParse(lblTR.Text, _lblTR)
         Double.TryParse(lblFY.Text, _lblFY)
-        Integer.TryParse(lbldate.Text, _lbldate)
+        _lbldate = Now.ToString()
+
 
         If TblLogsTableAdapterMain.Insert(txtlot.Text, txtDevice.Text, _lblTB, _lblTR, _lblFY, _lbldate) Then
             MsgBox("You're Data has been Saved.")

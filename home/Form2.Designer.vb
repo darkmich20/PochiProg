@@ -28,12 +28,6 @@ Partial Class Form2
         Me.txtlot = New System.Windows.Forms.TextBox()
         Me.lbllot = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.IDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LotNumberDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DeviceNumberDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TotalBin1DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TotalRejectsDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TblLogsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DbMainDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DbMainDataSet = New home.dbMainDataSet()
@@ -56,8 +50,14 @@ Partial Class Form2
         Me.TotalRejectsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Time = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.IDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LotNumberDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DeviceNumberDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalBin1DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalRejectsDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Time = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblLogsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DbMainDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,50 +111,8 @@ Partial Class Form2
         Me.DataGridView1.Location = New System.Drawing.Point(12, 91)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(779, 164)
+        Me.DataGridView1.Size = New System.Drawing.Size(793, 164)
         Me.DataGridView1.TabIndex = 57
-        '
-        'IDDataGridViewTextBoxColumn1
-        '
-        Me.IDDataGridViewTextBoxColumn1.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn1.HeaderText = "ID"
-        Me.IDDataGridViewTextBoxColumn1.Name = "IDDataGridViewTextBoxColumn1"
-        Me.IDDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'LotNumberDataGridViewTextBoxColumn1
-        '
-        Me.LotNumberDataGridViewTextBoxColumn1.DataPropertyName = "Lot Number"
-        Me.LotNumberDataGridViewTextBoxColumn1.HeaderText = "Lot Number"
-        Me.LotNumberDataGridViewTextBoxColumn1.Name = "LotNumberDataGridViewTextBoxColumn1"
-        Me.LotNumberDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DeviceNumberDataGridViewTextBoxColumn1
-        '
-        Me.DeviceNumberDataGridViewTextBoxColumn1.DataPropertyName = "Device Number"
-        Me.DeviceNumberDataGridViewTextBoxColumn1.HeaderText = "Device Number"
-        Me.DeviceNumberDataGridViewTextBoxColumn1.Name = "DeviceNumberDataGridViewTextBoxColumn1"
-        Me.DeviceNumberDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'TotalBin1DataGridViewTextBoxColumn1
-        '
-        Me.TotalBin1DataGridViewTextBoxColumn1.DataPropertyName = "Total Bin 1"
-        Me.TotalBin1DataGridViewTextBoxColumn1.HeaderText = "Total Bin 1"
-        Me.TotalBin1DataGridViewTextBoxColumn1.Name = "TotalBin1DataGridViewTextBoxColumn1"
-        Me.TotalBin1DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'TotalRejectsDataGridViewTextBoxColumn1
-        '
-        Me.TotalRejectsDataGridViewTextBoxColumn1.DataPropertyName = "Total Reject/s"
-        Me.TotalRejectsDataGridViewTextBoxColumn1.HeaderText = "Total Reject/s"
-        Me.TotalRejectsDataGridViewTextBoxColumn1.Name = "TotalRejectsDataGridViewTextBoxColumn1"
-        Me.TotalRejectsDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Total Yield"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Total Yield"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
         '
         'TblLogsBindingSource
         '
@@ -179,7 +137,7 @@ Partial Class Form2
         Me.lstvMain.GridLines = True
         Me.lstvMain.Location = New System.Drawing.Point(12, 261)
         Me.lstvMain.Name = "lstvMain"
-        Me.lstvMain.Size = New System.Drawing.Size(779, 134)
+        Me.lstvMain.Size = New System.Drawing.Size(793, 134)
         Me.lstvMain.TabIndex = 58
         Me.lstvMain.UseCompatibleStateImageBehavior = False
         Me.lstvMain.View = System.Windows.Forms.View.Details
@@ -288,23 +246,66 @@ Partial Class Form2
         Me.Column1.HeaderText = "Column1"
         Me.Column1.Name = "Column1"
         '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "Time"
+        '
+        'IDDataGridViewTextBoxColumn1
+        '
+        Me.IDDataGridViewTextBoxColumn1.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn1.Name = "IDDataGridViewTextBoxColumn1"
+        Me.IDDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'LotNumberDataGridViewTextBoxColumn1
+        '
+        Me.LotNumberDataGridViewTextBoxColumn1.DataPropertyName = "Lot Number"
+        Me.LotNumberDataGridViewTextBoxColumn1.HeaderText = "Lot Number"
+        Me.LotNumberDataGridViewTextBoxColumn1.Name = "LotNumberDataGridViewTextBoxColumn1"
+        Me.LotNumberDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DeviceNumberDataGridViewTextBoxColumn1
+        '
+        Me.DeviceNumberDataGridViewTextBoxColumn1.DataPropertyName = "Device Number"
+        Me.DeviceNumberDataGridViewTextBoxColumn1.HeaderText = "Device Number"
+        Me.DeviceNumberDataGridViewTextBoxColumn1.Name = "DeviceNumberDataGridViewTextBoxColumn1"
+        Me.DeviceNumberDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'TotalBin1DataGridViewTextBoxColumn1
+        '
+        Me.TotalBin1DataGridViewTextBoxColumn1.DataPropertyName = "Total Bin 1"
+        Me.TotalBin1DataGridViewTextBoxColumn1.HeaderText = "Total Bin 1"
+        Me.TotalBin1DataGridViewTextBoxColumn1.Name = "TotalBin1DataGridViewTextBoxColumn1"
+        Me.TotalBin1DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'TotalRejectsDataGridViewTextBoxColumn1
+        '
+        Me.TotalRejectsDataGridViewTextBoxColumn1.DataPropertyName = "Total Reject/s"
+        Me.TotalRejectsDataGridViewTextBoxColumn1.HeaderText = "Total Reject/s"
+        Me.TotalRejectsDataGridViewTextBoxColumn1.Name = "TotalRejectsDataGridViewTextBoxColumn1"
+        Me.TotalRejectsDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Total Yield"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Total Yield"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
         'Time
         '
         Me.Time.DataPropertyName = "Time"
         Me.Time.HeaderText = "Time"
         Me.Time.Name = "Time"
         Me.Time.ReadOnly = True
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "Time"
+        Me.Time.Width = 150
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(805, 407)
+        Me.ClientSize = New System.Drawing.Size(830, 407)
         Me.Controls.Add(Me.lstvMain)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.lbldev)
@@ -349,14 +350,14 @@ Partial Class Form2
     Friend WithEvents DeviceNumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TotalBin1DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TotalRejectsDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ID As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnHeader7 As ColumnHeader
     Friend WithEvents IDDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents LotNumberDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DeviceNumberDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents TotalBin1DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents TotalRejectsDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents ID As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Time As DataGridViewTextBoxColumn
-    Friend WithEvents ColumnHeader7 As ColumnHeader
 End Class
