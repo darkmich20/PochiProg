@@ -200,8 +200,8 @@ Public Class frmhome
 
     Private Sub Percent()
 
-        If lblTB.Text = "0" Then Exit Sub
-        If lblTR.Text = "0" Then Exit Sub
+        If lblTB.Text = "" Then Exit Sub
+        If lblTR.Text = "" Then Exit Sub
         Dim totalBuffer As Decimal
         Dim parseBuffer As Decimal
         Dim Uno As Decimal
@@ -215,7 +215,7 @@ Public Class frmhome
         totalBuffer = parseBuffer / Uno
         totalBuffer *= 100
 
-        lblFY.Text = Math.Round(totalBuffer, 2)
+        lblFY.Text = Math.Round(totalBuffer, 4)
 
 
 
