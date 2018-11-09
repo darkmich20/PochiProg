@@ -8,7 +8,7 @@
     Private Sub RefreshListView(e As String)
         'e Para sa search sa susunud
         TblLogsTableAdapter.FillBySearch(DbMainDataSet.tblLogs, txtlot.Text, txtDevice.Text)
-        lstvMain.Items.Clear()
+        ' lstvMain.Items.Clear()
         Dim lstvItem As ListViewItem
 
         Dim i As Integer = 0
@@ -23,7 +23,7 @@
             lstvItem.SubItems.Add(DbMainDataSet.tblLogs.Item(i)._Total_Reject_s.ToString())
             lstvItem.SubItems.Add(DbMainDataSet.tblLogs.Item(i).Total_Yield.ToString())
             lstvItem.SubItems.Add(DbMainDataSet.tblLogs.Item(i).Time.ToString())
-            lstvMain.Items.Add(lstvItem)
+            '  lstvMain.Items.Add(lstvItem)
             i += 1
         Loop While i < DbMainDataSet.tblLogs.Count
 

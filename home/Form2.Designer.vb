@@ -38,14 +38,6 @@ Partial Class Form2
         Me.TblLogsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DbMainDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DbMainDataSet = New home.dbMainDataSet()
-        Me.lstvMain = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.cntxLstvMain = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.RefreshToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -112,7 +104,7 @@ Partial Class Form2
         Me.DataGridView1.Location = New System.Drawing.Point(12, 91)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(793, 164)
+        Me.DataGridView1.Size = New System.Drawing.Size(793, 304)
         Me.DataGridView1.TabIndex = 57
         '
         'IDDataGridViewTextBoxColumn1
@@ -179,52 +171,6 @@ Partial Class Form2
         '
         Me.DbMainDataSet.DataSetName = "dbMainDataSet"
         Me.DbMainDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'lstvMain
-        '
-        Me.lstvMain.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7})
-        Me.lstvMain.ContextMenuStrip = Me.cntxLstvMain
-        Me.lstvMain.FullRowSelect = True
-        Me.lstvMain.GridLines = True
-        Me.lstvMain.Location = New System.Drawing.Point(12, 261)
-        Me.lstvMain.Name = "lstvMain"
-        Me.lstvMain.Size = New System.Drawing.Size(793, 134)
-        Me.lstvMain.TabIndex = 58
-        Me.lstvMain.UseCompatibleStateImageBehavior = False
-        Me.lstvMain.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "ID"
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Lot Number"
-        Me.ColumnHeader2.Width = 131
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Device Number"
-        Me.ColumnHeader3.Width = 124
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Total Bin 1"
-        Me.ColumnHeader4.Width = 101
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Total Rejects/s"
-        Me.ColumnHeader5.Width = 96
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Total Yield%"
-        Me.ColumnHeader6.Width = 78
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "Time"
         '
         'cntxLstvMain
         '
@@ -315,9 +261,8 @@ Partial Class Form2
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(830, 407)
+        Me.ClientSize = New System.Drawing.Size(810, 407)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.lstvMain)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.lbldev)
         Me.Controls.Add(Me.txtDevice)
@@ -345,13 +290,6 @@ Partial Class Form2
     Friend WithEvents TblLogsBindingSource As BindingSource
     Friend WithEvents TblLogsTableAdapter As dbMainDataSetTableAdapters.tblLogsTableAdapter
     Friend WithEvents TotalYieldDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents lstvMain As ListView
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents ColumnHeader4 As ColumnHeader
-    Friend WithEvents ColumnHeader5 As ColumnHeader
-    Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents cntxLstvMain As ContextMenuStrip
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
@@ -363,7 +301,6 @@ Partial Class Form2
     Friend WithEvents TotalRejectsDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents ColumnHeader7 As ColumnHeader
     Friend WithEvents IDDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents LotNumberDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DeviceNumberDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn

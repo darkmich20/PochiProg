@@ -10,3 +10,4 @@ C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug_X86\Re-screen Yield Cal
 C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug_X86\home.exe
 C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug_X86\home.xml
 C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug_X86\home.pdb
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug_X86\Re-screen Yield Calculator.vbprojResolveAssemblyReference.cache
