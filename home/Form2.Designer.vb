@@ -28,6 +28,13 @@ Partial Class Form2
         Me.txtlot = New System.Windows.Forms.TextBox()
         Me.lbllot = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.IDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LotNumberDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DeviceNumberDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalBin1DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalRejectsDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Time = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TblLogsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DbMainDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DbMainDataSet = New home.dbMainDataSet()
@@ -38,11 +45,11 @@ Partial Class Form2
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.cntxLstvMain = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.RefreshToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TblLogsTableAdapter = New home.dbMainDataSetTableAdapters.tblLogsTableAdapter()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LotNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DeviceNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,14 +57,8 @@ Partial Class Form2
         Me.TotalRejectsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.IDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LotNumberDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DeviceNumberDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TotalBin1DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TotalRejectsDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Time = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TblLogsTableAdapter = New home.dbMainDataSetTableAdapters.tblLogsTableAdapter()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblLogsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DbMainDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,142 +115,6 @@ Partial Class Form2
         Me.DataGridView1.Size = New System.Drawing.Size(793, 164)
         Me.DataGridView1.TabIndex = 57
         '
-        'TblLogsBindingSource
-        '
-        Me.TblLogsBindingSource.DataMember = "tblLogs"
-        Me.TblLogsBindingSource.DataSource = Me.DbMainDataSetBindingSource
-        '
-        'DbMainDataSetBindingSource
-        '
-        Me.DbMainDataSetBindingSource.DataSource = Me.DbMainDataSet
-        Me.DbMainDataSetBindingSource.Position = 0
-        '
-        'DbMainDataSet
-        '
-        Me.DbMainDataSet.DataSetName = "dbMainDataSet"
-        Me.DbMainDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'lstvMain
-        '
-        Me.lstvMain.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7})
-        Me.lstvMain.ContextMenuStrip = Me.cntxLstvMain
-        Me.lstvMain.FullRowSelect = True
-        Me.lstvMain.GridLines = True
-        Me.lstvMain.Location = New System.Drawing.Point(12, 261)
-        Me.lstvMain.Name = "lstvMain"
-        Me.lstvMain.Size = New System.Drawing.Size(793, 134)
-        Me.lstvMain.TabIndex = 58
-        Me.lstvMain.UseCompatibleStateImageBehavior = False
-        Me.lstvMain.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "ID"
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Lot Number"
-        Me.ColumnHeader2.Width = 131
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Device Number"
-        Me.ColumnHeader3.Width = 124
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Total Bin 1"
-        Me.ColumnHeader4.Width = 101
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Total Rejects/s"
-        Me.ColumnHeader5.Width = 97
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Total Yield%"
-        Me.ColumnHeader6.Width = 78
-        '
-        'cntxLstvMain
-        '
-        Me.cntxLstvMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RefreshToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem})
-        Me.cntxLstvMain.Name = "cntxLstvMain"
-        Me.cntxLstvMain.Size = New System.Drawing.Size(114, 70)
-        '
-        'RefreshToolStripMenuItem
-        '
-        Me.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
-        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
-        Me.RefreshToolStripMenuItem.Text = "R&efresh"
-        '
-        'EditToolStripMenuItem
-        '
-        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
-        Me.EditToolStripMenuItem.Text = "Edit"
-        '
-        'DeleteToolStripMenuItem
-        '
-        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
-        Me.DeleteToolStripMenuItem.Text = "Delete"
-        '
-        'TblLogsTableAdapter
-        '
-        Me.TblLogsTableAdapter.ClearBeforeFill = True
-        '
-        'IDDataGridViewTextBoxColumn
-        '
-        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
-        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'LotNumberDataGridViewTextBoxColumn
-        '
-        Me.LotNumberDataGridViewTextBoxColumn.DataPropertyName = "Lot Number"
-        Me.LotNumberDataGridViewTextBoxColumn.HeaderText = "Lot Number"
-        Me.LotNumberDataGridViewTextBoxColumn.Name = "LotNumberDataGridViewTextBoxColumn"
-        Me.LotNumberDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DeviceNumberDataGridViewTextBoxColumn
-        '
-        Me.DeviceNumberDataGridViewTextBoxColumn.DataPropertyName = "Device Number"
-        Me.DeviceNumberDataGridViewTextBoxColumn.HeaderText = "Device Number"
-        Me.DeviceNumberDataGridViewTextBoxColumn.Name = "DeviceNumberDataGridViewTextBoxColumn"
-        Me.DeviceNumberDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'TotalBin1DataGridViewTextBoxColumn
-        '
-        Me.TotalBin1DataGridViewTextBoxColumn.DataPropertyName = "Total Bin 1"
-        Me.TotalBin1DataGridViewTextBoxColumn.HeaderText = "Total Bin 1"
-        Me.TotalBin1DataGridViewTextBoxColumn.Name = "TotalBin1DataGridViewTextBoxColumn"
-        Me.TotalBin1DataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'TotalRejectsDataGridViewTextBoxColumn
-        '
-        Me.TotalRejectsDataGridViewTextBoxColumn.DataPropertyName = "Total Reject/s"
-        Me.TotalRejectsDataGridViewTextBoxColumn.HeaderText = "Total Reject/s"
-        Me.TotalRejectsDataGridViewTextBoxColumn.Name = "TotalRejectsDataGridViewTextBoxColumn"
-        Me.TotalRejectsDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ID
-        '
-        Me.ID.DataPropertyName = "ID"
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "ID"
-        Me.Column1.HeaderText = "Column1"
-        Me.Column1.Name = "Column1"
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "Time"
-        '
         'IDDataGridViewTextBoxColumn1
         '
         Me.IDDataGridViewTextBoxColumn1.DataPropertyName = "ID"
@@ -300,12 +165,158 @@ Partial Class Form2
         Me.Time.ReadOnly = True
         Me.Time.Width = 150
         '
+        'TblLogsBindingSource
+        '
+        Me.TblLogsBindingSource.DataMember = "tblLogs"
+        Me.TblLogsBindingSource.DataSource = Me.DbMainDataSetBindingSource
+        '
+        'DbMainDataSetBindingSource
+        '
+        Me.DbMainDataSetBindingSource.DataSource = Me.DbMainDataSet
+        Me.DbMainDataSetBindingSource.Position = 0
+        '
+        'DbMainDataSet
+        '
+        Me.DbMainDataSet.DataSetName = "dbMainDataSet"
+        Me.DbMainDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'lstvMain
+        '
+        Me.lstvMain.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7})
+        Me.lstvMain.ContextMenuStrip = Me.cntxLstvMain
+        Me.lstvMain.FullRowSelect = True
+        Me.lstvMain.GridLines = True
+        Me.lstvMain.Location = New System.Drawing.Point(12, 261)
+        Me.lstvMain.Name = "lstvMain"
+        Me.lstvMain.Size = New System.Drawing.Size(793, 134)
+        Me.lstvMain.TabIndex = 58
+        Me.lstvMain.UseCompatibleStateImageBehavior = False
+        Me.lstvMain.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "ID"
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Lot Number"
+        Me.ColumnHeader2.Width = 131
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Device Number"
+        Me.ColumnHeader3.Width = 124
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Total Bin 1"
+        Me.ColumnHeader4.Width = 101
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Total Rejects/s"
+        Me.ColumnHeader5.Width = 96
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Total Yield%"
+        Me.ColumnHeader6.Width = 78
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "Time"
+        '
+        'cntxLstvMain
+        '
+        Me.cntxLstvMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RefreshToolStripMenuItem, Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem})
+        Me.cntxLstvMain.Name = "cntxLstvMain"
+        Me.cntxLstvMain.Size = New System.Drawing.Size(114, 70)
+        '
+        'RefreshToolStripMenuItem
+        '
+        Me.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem"
+        Me.RefreshToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.RefreshToolStripMenuItem.Text = "R&efresh"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.EditToolStripMenuItem.Text = "Edit"
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
+        'IDDataGridViewTextBoxColumn
+        '
+        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'LotNumberDataGridViewTextBoxColumn
+        '
+        Me.LotNumberDataGridViewTextBoxColumn.DataPropertyName = "Lot Number"
+        Me.LotNumberDataGridViewTextBoxColumn.HeaderText = "Lot Number"
+        Me.LotNumberDataGridViewTextBoxColumn.Name = "LotNumberDataGridViewTextBoxColumn"
+        Me.LotNumberDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DeviceNumberDataGridViewTextBoxColumn
+        '
+        Me.DeviceNumberDataGridViewTextBoxColumn.DataPropertyName = "Device Number"
+        Me.DeviceNumberDataGridViewTextBoxColumn.HeaderText = "Device Number"
+        Me.DeviceNumberDataGridViewTextBoxColumn.Name = "DeviceNumberDataGridViewTextBoxColumn"
+        Me.DeviceNumberDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TotalBin1DataGridViewTextBoxColumn
+        '
+        Me.TotalBin1DataGridViewTextBoxColumn.DataPropertyName = "Total Bin 1"
+        Me.TotalBin1DataGridViewTextBoxColumn.HeaderText = "Total Bin 1"
+        Me.TotalBin1DataGridViewTextBoxColumn.Name = "TotalBin1DataGridViewTextBoxColumn"
+        Me.TotalBin1DataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TotalRejectsDataGridViewTextBoxColumn
+        '
+        Me.TotalRejectsDataGridViewTextBoxColumn.DataPropertyName = "Total Reject/s"
+        Me.TotalRejectsDataGridViewTextBoxColumn.HeaderText = "Total Reject/s"
+        Me.TotalRejectsDataGridViewTextBoxColumn.Name = "TotalRejectsDataGridViewTextBoxColumn"
+        Me.TotalRejectsDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ID
+        '
+        Me.ID.DataPropertyName = "ID"
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "ID"
+        Me.Column1.HeaderText = "Column1"
+        Me.Column1.Name = "Column1"
+        '
+        'TblLogsTableAdapter
+        '
+        Me.TblLogsTableAdapter.ClearBeforeFill = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(528, 54)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 59
+        Me.Button1.Text = "Search"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(830, 407)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lstvMain)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.lbldev)
@@ -360,4 +371,5 @@ Partial Class Form2
     Friend WithEvents TotalRejectsDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents Time As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
 End Class
