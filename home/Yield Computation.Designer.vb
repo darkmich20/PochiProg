@@ -85,6 +85,7 @@ Partial Class frmhome
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -717,12 +718,23 @@ Partial Class frmhome
         Me.PictureBox1.TabIndex = 66
         Me.PictureBox1.TabStop = False
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Times New Roman", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(-2, 547)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(141, 12)
+        Me.Label8.TabIndex = 67
+        Me.Label8.Text = " © 2018 | J. Ricohermoso | N.Padlan"
+        '
         'frmhome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkSeaGreen
         Me.ClientSize = New System.Drawing.Size(1182, 576)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.btnSearch)
@@ -741,6 +753,7 @@ Partial Class frmhome
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.Name = "frmhome"
@@ -822,4 +835,5 @@ Partial Class frmhome
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label7 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label8 As Label
 End Class

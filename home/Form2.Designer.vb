@@ -23,6 +23,7 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.lbldev = New System.Windows.Forms.Label()
         Me.txtDevice = New System.Windows.Forms.TextBox()
         Me.txtlot = New System.Windows.Forms.TextBox()
@@ -37,7 +38,7 @@ Partial Class Form2
         Me.Time = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TblLogsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DbMainDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DbMainDataSet = New home.dbMainDataSet()
+        Me.DbMainDataSet = New RSYC.dbMainDataSet()
         Me.cntxLstvMain = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.RefreshToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -49,7 +50,7 @@ Partial Class Form2
         Me.TotalRejectsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TblLogsTableAdapter = New home.dbMainDataSetTableAdapters.tblLogsTableAdapter()
+        Me.TblLogsTableAdapter = New RSYC.dbMainDataSetTableAdapters.tblLogsTableAdapter()
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblLogsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -268,8 +269,10 @@ Partial Class Form2
         Me.Controls.Add(Me.txtDevice)
         Me.Controls.Add(Me.txtlot)
         Me.Controls.Add(Me.lbllot)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form2"
-        Me.Text = "Form2"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "Re-screen Search"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblLogsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DbMainDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

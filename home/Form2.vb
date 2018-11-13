@@ -2,7 +2,7 @@
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DbMainDataSet.tblLogs' table. You can move, or remove it, as needed.
         Me.TblLogsTableAdapter.Fill(Me.DbMainDataSet.tblLogs)
-<<<<<<< HEAD
+
 
         RefreshListView("")
     End Sub
@@ -32,8 +32,7 @@
 
     Private Sub RefreshToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RefreshToolStripMenuItem.Click
         RefreshListView("")
-=======
->>>>>>> 36a96a2ed60601b35e80fd658282ee48c66bb8c3
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
