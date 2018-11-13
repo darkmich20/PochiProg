@@ -10,4 +10,5 @@ C:\Users\jhoyr\Documents\GitHub\PochiProg\home\bin\Debug_X86\RSYC.xml
 C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug_X86\RSYC.exe
 C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug_X86\RSYC.xml
 C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug_X86\RSYC.pdb
-C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug_X86\Re-screen Yield Calculator.vbprojResolveAssemblyReference.cache
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug_X86\Re-screen Yield Calculator.vbprojAssemblyReference.cache
+C:\Users\jhoyr\Documents\GitHub\PochiProg\home\obj\Debug_X86\Re-screen Yield Calculator.vbproj.CoreCompileInputs.cache
